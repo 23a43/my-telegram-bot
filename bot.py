@@ -5,7 +5,7 @@ from telegram import Update
 # ✅ সঠিক লাইন:
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 TELEGRAM_BOT_TOKEN = "8813169317:AAFfxhHRSxaMT29FYYvMfNXHuSJty1eQTNY"
-GEMINI_API_KEY = "AQ.Ab8RN6LVGj_dOSRqMlMf8ddnHl7grpTwiDlIMaF8YC46LXWfUw"
+GEMINI_API_KEY = "AQ.Ab8RN6I6szzD1FHolOwVqPhaYMsyDmYe6j2iBCt0K4BghkUDWg"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("হ্যালো! আমি আপনার AI Job Agent। আমাকে যেকোনো প্রশ্ন করতে পারেন।")

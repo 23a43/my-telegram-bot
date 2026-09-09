@@ -1,15 +1,11 @@
 import os
+import asyncio
 import requests
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
-# ==================== CONFIGURATION ====================
-# ১. Telegram Bot Token (BotFather থেকে নেওয়া)
 TELEGRAM_BOT_TOKEN = "8844521108:AAGFgoupE4cRiTS7nvDujNUt5N0d1K8FZ6Q"
-
-# ২. Google Gemini API Key (Google AI Studio থেকে নেওয়া)
 GEMINI_API_KEY = "AQ.Ab8RN6Jsg1iK7VLUDoBlOA9pVXDWidY3_N1Xn51Y3mGrpzr3Tw"
-# =======================================================
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("হ্যালো! আমি আপনার AI Job Agent। আমাকে যেকোনো প্রশ্ন করতে পারেন।")
@@ -34,8 +30,13 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(reply)
 
-if __name__ == '__main__':
+def main():
     app = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
-    app.run_polling()
+    
+    print("Bot starting...")
+    app.run_polling(drop_pending_updates=True)
+
+if __name__ == '__main__':
+    main()

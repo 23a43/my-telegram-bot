@@ -2,8 +2,8 @@ import os
 import asyncio
 import requests
 from telegram import Update
+# ✅ সঠিক লাইন:
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
-
 TELEGRAM_BOT_TOKEN = "8813169317:AAFfxhHRSxaMT29FYYvMfNXHuSJty1eQTNY"
 GEMINI_API_KEY = "AQ.Ab8RN6Jsg1iK7VLUDoBlOA9pVXDWidY3_N1Xn51Y3mGrpzr3Tw"
 

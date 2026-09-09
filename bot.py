@@ -4,7 +4,7 @@ import requests
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
-TELEGRAM_BOT_TOKEN = "8844521108:AAGFgoupE4cRiTS7nvDujNUt5N0d1K8FZ6Q"
+TELEGRAM_BOT_TOKEN = "8844521108:AAGy7qRImrxxCrp9-BZqpxiyLEyNsqndBx4"
 GEMINI_API_KEY = "AQ.Ab8RN6Jsg1iK7VLUDoBlOA9pVXDWidY3_N1Xn51Y3mGrpzr3Tw"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):

@@ -2,7 +2,7 @@ import os
 import asyncio
 import requests
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
+from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
 TELEGRAM_BOT_TOKEN = "8813169317:AAFfxhHRSxaMT29FYYvMfNXHuSJty1eQTNY"
 GEMINI_API_KEY = "AQ.Ab8RN6Jsg1iK7VLUDoBlOA9pVXDWidY3_N1Xn51Y3mGrpzr3Tw"
@@ -31,7 +31,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(reply)
 
 def main():
-    app = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
+    app = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     
